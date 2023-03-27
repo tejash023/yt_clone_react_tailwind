@@ -11,12 +11,11 @@ const buttonsList = [
   "Ukraine",
   "FIFA 23",
   "MSD",
-  "Google",
 ];
 
 const ButtonsList = () => {
   return (
-    <div className="flex">
+    <div className="flex ">
       {buttonsList.map((listItem, index) => (
         <Button key={index} name={listItem} />
       ))}
