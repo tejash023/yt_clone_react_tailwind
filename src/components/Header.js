@@ -1,12 +1,21 @@
 import React from "react";
 import { FiSearch } from "react-icons/fi";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../utils/appSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const handleNavigationMenu = () => {
+    dispatch(toggleMenu());
+  };
+
   return (
     <div className="grid grid-flow-col p-0.5  m-0.5 px-4 shadow-lg items-center">
       <div className="flex items-center col-span-1">
         <img
-          className="h-6"
+          onClick={() => handleNavigationMenu()}
+          className="h-6 cursor-pointer"
           src="https://cdn.iconscout.com/icon/free/png-256/hamburger-menu-462145.png"
           alt="nav-icon"
         />
