@@ -9,20 +9,23 @@ const SearchByName = () => {
   const [searchVideos, setSearchVideos] = useState([]);
   useEffect(() => {
     getSearchVideos();
-  }, []);
+  }, [name]);
 
   const getSearchVideos = async () => {
     const response = await fetch(
       YT_SEARCH + name + "&key=" + process.env.REACT_APP_GOOGLE_KEY
     );
     const json = await response.json();
-    console.log(json.items);
+
     setSearchVideos(json.items);
   };
   return (
     <div className="flex flex-col sm:flex-wrap sm:flex-row">
       {searchVideos.map((searchVideo) => (
-        <Link key={searchVideo.id} to={"/watch?v=" + searchVideo.id.videoId}>
+        <Link
+          key={searchVideo.id.videoId}
+          to={"/watch?v=" + searchVideo.id.videoId}
+        >
           <VideoCard info={searchVideo} />
         </Link>
       ))}

@@ -7,7 +7,7 @@ const Sidebar = () => {
 
   if (!navigationBar) return null;
   return (
-    <div className="p-2 px-5  shadow-lg w-52">
+    <div className="p-2  shadow-lg w-52">
       <ul>
         <NavLink to="/">
           <li className="flex items-center hover:bg-gray-900 hover:rounded-md hover:text-red-500 hover:ease duration-100">
@@ -160,24 +160,27 @@ const Sidebar = () => {
       {/* className="h-6 my-2 mx-2" */}
       <h1 className="font-bold pt-5">Explore</h1>
       <ul>
-        <li className="flex items-center ">
-          <svg
-            className="h-6 my-2 mx-2"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
-            ></path>
-          </svg>
-          Trending
-        </li>
+        <NavLink to={"/search/Trending"}>
+          <li className="flex items-center ">
+            <svg
+              className="h-6 my-2 mx-2"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
+              ></path>
+            </svg>
+            Trending
+          </li>
+        </NavLink>
+
         <li className="flex items-center ">
           <svg
             className="h-6 my-2 mx-2"
