@@ -3,8 +3,6 @@ import moment from "moment";
 import noToString from "../utils/noToString";
 
 const VideoCard = ({ info }) => {
-  console.log("info", info);
-
   const { snippet, statistics } = info;
   const { channelTitle, title, thumbnails, publishedAt } = snippet;
   return (
