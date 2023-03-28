@@ -20,11 +20,13 @@ const Header = () => {
           alt="nav-icon"
         />
 
-        <img
-          className="h-14 mx-2"
-          src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png"
-          alt="logo"
-        />
+        <a href="/">
+          <img
+            className="h-14 mx-2"
+            src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png"
+            alt="logo"
+          />
+        </a>
       </div>
 
       <div className="flex col-span-10 px-10 h-8 ">

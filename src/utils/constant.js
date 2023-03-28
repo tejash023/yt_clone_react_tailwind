@@ -1,5 +1,8 @@
-const GOOGLE_API_KEY = "AIzaSyCTm6X33fW032Vav24W6vhpuI4wnn8BqO0";
-
 export const YOUTUBE_POPULAR_VIDEOS_API =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=10&regionCode=IN&key=" +
-  GOOGLE_API_KEY;
+  process.env.REACT_APP_GOOGLE_KEY;
+
+export const YT_SEARCH =
+  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=";
+
+//https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=surfing&key=

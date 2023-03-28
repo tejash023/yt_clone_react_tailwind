@@ -3,12 +3,12 @@ import moment from "moment";
 import noToString from "../utils/noToString";
 
 const VideoCard = ({ info }) => {
-  const { snippet, statistics } = info;
+  const { snippet } = info;
   const { channelTitle, title, thumbnails, publishedAt } = snippet;
   return (
     <div className="p-2 m-2 w-72 rounded">
       <img
-        className="rounded-lg shadow-lg"
+        className="rounded-lg shadow-lg hover:scale-110 hover:ease-in-out duration-300"
         alt="thumnails"
         src={thumbnails.medium.url}
       />
@@ -17,8 +17,18 @@ const VideoCard = ({ info }) => {
         <p className="font-medium text-sm">{channelTitle}</p>
       </div>
       <div className="flex items-center gap-1 py-1">
-        <p className="text-sm ">{noToString(statistics.viewCount)}</p>
-        <p className="text-sm mx-2">{moment(publishedAt).fromNow()}</p>
+        {info.statistics && (
+          <>
+            <p className="text-sm text-gray-600 font-medium">
+              {noToString(info.statistics.viewCount)} views{" "}
+            </p>
+            <p className="text-gray-600">•</p>
+          </>
+        )}
+
+        <p className="text-sm text-gray-600 font-medium ">
+          {moment(publishedAt).fromNow()}
+        </p>
       </div>
     </div>
   );
