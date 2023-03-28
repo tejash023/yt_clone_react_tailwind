@@ -8,17 +8,18 @@ const SearchByName = () => {
   const { name } = useParams();
   const [searchVideos, setSearchVideos] = useState([]);
   useEffect(() => {
+    const getSearchVideos = async () => {
+      const response = await fetch(
+        YT_SEARCH + name + "&key=" + process.env.REACT_APP_GOOGLE_KEY
+      );
+      const json = await response.json();
+
+      setSearchVideos(json.items);
+    };
+
     getSearchVideos();
   }, [name]);
 
-  const getSearchVideos = async () => {
-    const response = await fetch(
-      YT_SEARCH + name + "&key=" + process.env.REACT_APP_GOOGLE_KEY
-    );
-    const json = await response.json();
-
-    setSearchVideos(json.items);
-  };
   return (
     <div className="flex flex-col sm:flex-wrap sm:flex-row">
       {searchVideos.map((searchVideo) => (
