@@ -1,6 +1,6 @@
 # YouTube App using React and Tailwind CSS
 
-### This is a simple YouTube app built using React and Tailwind CSS. It uses the YouTube API to fetch the most popular videos and display them on the screen. This app is perfect for users who want to quickly view the trending videos on YouTube without the need to navigate through the YouTube website.
+- This is a simple YouTube app built using React and Tailwind CSS. It uses the YouTube API to fetch the most popular videos and display them on the screen. This app is perfect for users who want to quickly view the trending videos on YouTube without the need to navigate through the YouTube website.
 
 ## Getting Started
 
