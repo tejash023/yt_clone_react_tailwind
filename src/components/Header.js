@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FiSearch } from "react-icons/fi";
+
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YT_AUTOCOMPLETE } from "../utils/constant";
@@ -10,18 +10,18 @@ const Header = () => {
   const [showSuggestions, setShowSuggestion] = useState(false);
 
   useEffect(() => {
+    const searchInputResult = async () => {
+      const response = await fetch(YT_AUTOCOMPLETE + searchInput);
+      const result = await response.json();
+      setSuggestions(result[1]);
+    };
+
     const timer = setTimeout(() => searchInputResult(), 200);
 
     return () => {
       clearTimeout(timer);
     };
   }, [searchInput]);
-
-  const searchInputResult = async () => {
-    const response = await fetch(YT_AUTOCOMPLETE + searchInput);
-    const result = await response.json();
-    setSuggestions(result[1]);
-  };
 
   const dispatch = useDispatch();
 
@@ -64,7 +64,7 @@ const Header = () => {
           </button> */}
         </div>
         {showSuggestions && suggestions.length > 0 && (
-          <div className="fixed bg-white py-2 px-2 w-[27rem] shadow-lg rounded border border-gray-100">
+          <div className="fixed bg-white py-2 px-2 w-[25rem] shadow-lg rounded border border-gray-100">
             <ul>
               {suggestions.map((suggestion) => (
                 <li
