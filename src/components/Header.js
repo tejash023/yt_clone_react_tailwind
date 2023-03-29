@@ -8,7 +8,11 @@ const Header = () => {
   const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
-    searchInputResult();
+    const timer = setTimeout(() => searchInputResult(), 200);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [searchInput]);
 
   const searchInputResult = async () => {
