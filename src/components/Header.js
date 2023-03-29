@@ -7,6 +7,7 @@ import { YT_AUTOCOMPLETE } from "../utils/constant";
 const Header = () => {
   const [searchInput, setSearchInput] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestion] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => searchInputResult(), 200);
@@ -50,17 +51,19 @@ const Header = () => {
       <div className="col-span-10 px-10 h-8 ">
         <div>
           <input
-            className="px-5 w-1/2 border border-gray-400 p-2 rounded-l-full focus:outline-none  "
+            className="px-5 w-1/2 border border-gray-400 p-2 rounded-full focus:outline-none  "
             type="text"
             placeholder="Search videos.."
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
+            onFocus={() => setShowSuggestion(true)}
+            onBlur={() => setShowSuggestion(false)}
           />
-          <button className=" border border-gray-400 px-5 bg-gray-100 p-2 rounded-r-full">
+          {/* <button className=" border border-gray-400 px-5 bg-gray-100 p-2 rounded-r-full">
             <FiSearch height="1.15rem" />
-          </button>
+          </button> */}
         </div>
-        {suggestions.length > 0 && (
+        {showSuggestions && suggestions.length > 0 && (
           <div className="fixed bg-white py-2 px-2 w-[27rem] shadow-lg rounded border border-gray-100">
             <ul>
               {suggestions.map((suggestion) => (
