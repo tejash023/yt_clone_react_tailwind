@@ -6,6 +6,6 @@ export const YT_SEARCH =
   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=";
 
 export const YT_AUTOCOMPLETE =
-  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+  "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 //https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=surfing&key=
