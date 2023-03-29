@@ -11,8 +11,9 @@ const buttonsList = [
   "React",
   "USA",
   "Ukraine",
-  "FIFA 23",
-  "MSD",
+  "COD",
+  "Dhoni",
+  "G20",
 ];
 
 const ButtonsList = () => {

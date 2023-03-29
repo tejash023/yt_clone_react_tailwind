@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
+import { YT_AUTOCOMPLETE } from "../utils/constant";
 
 const Header = () => {
+  const [searchInput, setSearchInput] = useState("");
+
+  useEffect(() => {
+    searchInputResult();
+  }, [searchInput]);
+
+  const searchInputResult = async () => {
+    const response = await fetch(YT_AUTOCOMPLETE + searchInput);
+    const result = await response.json();
+    console.log(result);
+  };
+
   const dispatch = useDispatch();
 
   const handleNavigationMenu = () => {
@@ -34,6 +47,8 @@ const Header = () => {
           className="w-1/2 border border-gray-400 p-2 rounded-l-full focus:outline-none  "
           type="text"
           placeholder="Search videos.."
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
         />
         <button className=" border border-gray-400 px-5 bg-gray-100 p-2 rounded-r-full">
           <FiSearch height="1.15rem" />
