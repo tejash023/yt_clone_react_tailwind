@@ -7,7 +7,7 @@ const Sidebar = () => {
 
   if (!navigationBar) return null;
   return (
-    <div className="p-2  shadow-lg w-52">
+    <div className="p-2 shadow-lg w-52 hidden md:block">
       <ul>
         <NavLink to="/">
           <li className="flex items-center hover:bg-gray-900 hover:rounded-md hover:text-red-500 hover:ease duration-100">

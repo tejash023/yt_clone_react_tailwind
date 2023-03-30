@@ -14,11 +14,15 @@ const buttonsList = [
   "COD",
   "Dhoni",
   "G20",
+  "RCB",
+  "Punjab",
+  "Indian",
+  "Aircraft",
 ];
 
 const ButtonsList = () => {
   return (
-    <div className="flex px-2">
+    <div className="flex px-2 overflow-x-scroll">
       {buttonsList.map((listItem, index) => (
         <Link key={index} to={"/search/" + listItem}>
           <Button name={listItem} />

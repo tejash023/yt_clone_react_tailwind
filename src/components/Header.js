@@ -30,11 +30,11 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed flex flex-row items-center justify-between p-2 top-0 w-full bg-white m-0.5 px-4 shadow-lg ">
+    <div className="fixed flex flex-row items-center justify-between p-2 top-0 w-full bg-white  px-4 shadow-lg ">
       <div className="flex items-center">
         <img
           onClick={() => handleNavigationMenu()}
-          className="h-6 cursor-pointer"
+          className="h-6 cursor-pointer hidden md:block"
           src="https://cdn.iconscout.com/icon/free/png-256/hamburger-menu-462145.png"
           alt="nav-icon"
         />
