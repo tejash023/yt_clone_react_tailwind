@@ -5,6 +5,9 @@ export const YOUTUBE_POPULAR_VIDEOS_API =
 export const YT_SEARCH =
   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=";
 
+// export const YT_AUTOCOMPLETE =
+//   "https://clients1.google.com/complete/search?client=youtube&gs_ri=youtube&ds=yt&q=";
+
 export const YT_AUTOCOMPLETE =
   "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 

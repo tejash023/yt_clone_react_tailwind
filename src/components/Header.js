@@ -30,8 +30,8 @@ const Header = () => {
   };
 
   return (
-    <div className="grid grid-flow-col p-2  m-0.5 px-4 shadow-lg items-center">
-      <div className="flex items-center col-span-1">
+    <div className="fixed flex flex-col md:flex-row items-center justify-between p-2 top-0 w-full bg-white m-0.5 px-4 shadow-lg ">
+      <div className="flex items-center">
         <img
           onClick={() => handleNavigationMenu()}
           className="h-6 cursor-pointer"
@@ -48,10 +48,10 @@ const Header = () => {
         </a>
       </div>
 
-      <div className="col-span-10 px-10 h-8 ">
+      <div className=" px-10 h-10 w-3/4 ">
         <div>
           <input
-            className="px-5 w-1/2 border border-gray-400 p-2 rounded-full focus:outline-none  "
+            className="px-5 w-1/2 border border-gray-400 p-2 rounded-full focus:outline-none focus:scale-105 ease-in-out"
             type="text"
             placeholder="Search videos.."
             value={searchInput}
@@ -59,25 +59,21 @@ const Header = () => {
             onFocus={() => setShowSuggestion(true)}
             onBlur={() => setShowSuggestion(false)}
           />
-          {/* <button className=" border border-gray-400 px-5 bg-gray-100 p-2 rounded-r-full">
-            <FiSearch height="1.15rem" />
-          </button> */}
         </div>
         {showSuggestions && suggestions.length > 0 && (
-          <div className="fixed bg-white py-2 px-2 w-[25rem] shadow-lg rounded border border-gray-100">
+          <div className="sticky bg-white py-4 px-2 w-[26rem] shadow-lg rounded border border-gray-100">
             <ul>
               {suggestions.map((suggestion) => (
                 <li
                   key={suggestion}
-                  className="flex items-center gap-2 px-3 py-1 shadow-sm hover:bg-slate-100"
+                  className="flex items-center gap-2 px-3 py-1  hover:bg-slate-100 "
                 >
                   <svg
-                    className="h-5"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="w-6 h-6"
+                    className="h-4 mr-2"
                   >
                     <path
                       stroke-linecap="round"
@@ -93,7 +89,7 @@ const Header = () => {
         )}
       </div>
 
-      <div className="col-span-1">
+      <div className="">
         <img
           className="h-8"
           src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
