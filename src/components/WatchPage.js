@@ -5,10 +5,9 @@ const WatchPage = () => {
   const [searchParams] = useSearchParams();
 
   return (
-    <div className="p-4 px-5">
+    <div className="p-4 px-5 w-full h-full">
       <iframe
-        width="750"
-        height="400"
+        className="w-fit h-fit sm:w-8/12 sm:h-96"
         src={"https://www.youtube.com/embed/" + searchParams.get("v")}
         title="YouTube video player"
         frameBorder="0"
