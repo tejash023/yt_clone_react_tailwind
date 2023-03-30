@@ -30,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed flex flex-col md:flex-row items-center justify-between p-2 top-0 w-full bg-white m-0.5 px-4 shadow-lg ">
+    <div className="fixed flex flex-row items-center justify-between p-2 top-0 w-full bg-white m-0.5 px-4 shadow-lg ">
       <div className="flex items-center">
         <img
           onClick={() => handleNavigationMenu()}
@@ -48,10 +48,10 @@ const Header = () => {
         </a>
       </div>
 
-      <div className=" px-10 h-10 w-3/4 ">
+      <div className=" object-none px-10 h-10 w-3/4 ">
         <div>
           <input
-            className="px-5 w-1/2 border border-gray-400 p-2 rounded-full focus:outline-none focus:scale-105 ease-in-out"
+            className="px-5 w-3/4 border border-gray-400 p-2 rounded-full focus:outline-none focus:scale-105 ease-in-out"
             type="text"
             placeholder="Search videos.."
             value={searchInput}
@@ -61,7 +61,7 @@ const Header = () => {
           />
         </div>
         {showSuggestions && suggestions.length > 0 && (
-          <div className="sticky bg-white py-4 px-2 w-[26rem] shadow-lg rounded border border-gray-100">
+          <div className="sticky bg-white py-4 px-2 w-1/2 shadow-lg rounded border border-gray-100">
             <ul>
               {suggestions.map((suggestion) => (
                 <li
