@@ -19,7 +19,7 @@ const VideosContainer = () => {
   return !videos ? (
     "Loading...."
   ) : (
-    <div className="flex flex-col items-start justify-center sm:flex-wrap sm:flex-row">
+    <div className="flex flex-col items-center justify-center sm:flex-wrap sm:flex-row sm:items-start">
       {videos.map((video) => (
         <Link key={video.id} to={"/watch?v=" + video.id}>
           <VideoCard info={video} />
