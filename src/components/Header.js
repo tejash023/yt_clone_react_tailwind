@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YT_AUTOCOMPLETE } from "../utils/constant";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -30,7 +31,7 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed flex flex-row items-center justify-between p-2 top-0 w-full bg-white  px-4 shadow-lg ">
+    <div className="fixed flex flex-row items-center justify-between p-2 top-0 w-full bg-white  px-4 shadow-sm ">
       <div className="flex items-center">
         <img
           onClick={() => handleNavigationMenu()}
@@ -48,10 +49,10 @@ const Header = () => {
         </a>
       </div>
 
-      <div className=" object-none px-10 h-10 w-3/4 ">
+      <div className="px-10 h-10 w-3/4 ">
         <div>
           <input
-            className="px-5 w-3/4 border border-gray-400 p-2 rounded-full focus:outline-none focus:scale-105 ease-in-out"
+            className="hidden sm:block px-5 w-3/4 border border-gray-400 p-2 rounded-full focus:outline-none focus:scale-105 ease-in-out"
             type="text"
             placeholder="Search videos.."
             value={searchInput}
@@ -60,38 +61,15 @@ const Header = () => {
             onBlur={() => setShowSuggestion(false)}
           />
         </div>
+
         {showSuggestions && suggestions.length > 0 && (
-          <div className="sticky bg-white py-4 px-2 w-1/2 shadow-lg rounded border border-gray-100">
-            <ul>
-              {suggestions.map((suggestion) => (
-                <li
-                  key={suggestion}
-                  className="flex items-center gap-2 px-3 py-1  hover:bg-slate-100 "
-                >
-                  <svg
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    className="h-4 mr-2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                    />
-                  </svg>
-                  {suggestion}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <SearchBar suggestions={suggestions} />
         )}
       </div>
 
       <div className="">
         <img
-          className="h-8"
+          className="h-8 w-8"
           src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
           alt="user-icon"
         />

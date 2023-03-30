@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 
 const Body = () => {
   return (
-    <div className="flex mt-20">
+    <div className="flex mt-[4.5rem]">
       <Sidebar />
       <Outlet />
     </div>
