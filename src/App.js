@@ -1,12 +1,12 @@
 import { Provider } from "react-redux";
 import Body from "./components/Body";
 import Header from "./components/Header";
-import MainContainer from "./components/MainContainer";
 import "./input.css";
 import store from "./utils/store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WatchPage from "./components/WatchPage";
 import SearchByName from "./components/SearchByName";
+import VideosContainer from "./components/VideosContainer";
 
 const appRouter = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <MainContainer />,
+        element: <VideosContainer />,
       },
       {
         path: "search/:name",
