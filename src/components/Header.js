@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, useRef } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YT_AUTOCOMPLETE } from "../utils/constant";
 import { cacheResults } from "../utils/searchSlice";
 import SearchBar from "./SearchBar";
+import useClickOutside from "../utils/useClickOutside";
 
 const Header = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -46,6 +47,10 @@ const Header = () => {
     dispatch(toggleMenu());
   };
 
+  let DOMNode = useClickOutside(() => {
+    setShowSuggestion(false);
+  });
+
   return (
     <div className="fixed flex flex-row items-center justify-between p-2 top-0 w-full bg-white  px-4 shadow-sm ">
       <div className="flex items-center">
@@ -74,7 +79,7 @@ const Header = () => {
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
             onFocus={() => setShowSuggestion(true)}
-            onBlur={() => setShowSuggestion(false)}
+            ref={DOMNode}
           />
         </div>
 

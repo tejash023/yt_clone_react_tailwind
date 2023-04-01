@@ -7,7 +7,8 @@ const SearchBar = ({ suggestions }) => {
         {suggestions.map((suggestion) => (
           <li
             key={suggestion}
-            className="flex items-center gap-2 px-3 py-1  hover:bg-slate-100 "
+            className="flex items-center gap-2 px-3 py-1  hover:bg-slate-100"
+            onClick={() => console.log(suggestion)}
           >
             <svg
               fill="none"
