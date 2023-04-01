@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YT_AUTOCOMPLETE } from "../utils/constant";
+import { cacheResults } from "../utils/searchSlice";
 import SearchBar from "./SearchBar";
 
 const Header = () => {
@@ -10,14 +11,29 @@ const Header = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestion] = useState(false);
 
+  const searchCache = useSelector((store) => store.search);
+
   useEffect(() => {
     const searchInputResult = async () => {
       const response = await fetch(YT_AUTOCOMPLETE + searchInput);
       const result = await response.json();
       setSuggestions(result[1]);
+
+      //update cache
+      dispatch(
+        cacheResults({
+          [searchInput]: result[1],
+        })
+      );
     };
 
-    const timer = setTimeout(() => searchInputResult(), 200);
+    const timer = setTimeout(() => {
+      if (searchCache[searchInput]) {
+        setSuggestions(searchCache[searchInput]);
+      } else {
+        searchInputResult();
+      }
+    }, 200);
 
     return () => {
       clearTimeout(timer);
