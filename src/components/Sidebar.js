@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 import {
@@ -17,13 +17,18 @@ import {
   MdOutlineNewspaper,
   MdEmojiEvents,
 } from "react-icons/md";
+import { toggleMenu } from "../utils/appSlice";
 
 const Sidebar = () => {
   const navigationBar = useSelector((store) => store.app.isMenuOpen);
+  const dispatch = useDispatch();
 
   if (!navigationBar) return null;
   return (
-    <div className="fixed bg-white ease-in p-2 shadow-lg w-52 hidden md:block">
+    <div
+      className="fixed bg-white ease-in p-2 shadow-lg w-52 hidden md:block"
+      onMouseLeave={() => dispatch(toggleMenu())}
+    >
       <ul>
         <NavLink to="/">
           <li className="flex items-center hover:bg-gray-900 hover:rounded-md hover:text-red-500 hover:ease duration-100 font-semibold">
