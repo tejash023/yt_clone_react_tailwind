@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import VideoCard from "./VideoCard";
 import { YOUTUBE_POPULAR_VIDEOS_API } from "../utils/constant";
 import { Link } from "react-router-dom";
+import Shimmer from "./Shimmer";
 
 const VideosContainer = () => {
   const [videos, setVideos] = useState([]);
@@ -17,7 +18,7 @@ const VideosContainer = () => {
   };
 
   return !videos ? (
-    "Loading...."
+    <Shimmer />
   ) : (
     <div className="flex flex-col items-center justify-center sm:flex-wrap sm:flex-row sm:items-start">
       {videos.map((video) => (
