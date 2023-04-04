@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { useDispatch, useSelector, useRef } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YT_AUTOCOMPLETE } from "../utils/constant";
 import { cacheResults } from "../utils/searchSlice";
@@ -70,7 +70,7 @@ const Header = () => {
         </a>
       </div>
 
-      <div className="px-10 h-10 w-3/4 ">
+      <div className="px-10 h-10 w-3/4 " ref={DOMNode}>
         <div>
           <input
             className="hidden sm:block px-5 w-3/4 border border-gray-400 p-2 rounded-full focus:outline-none focus:scale-105 ease-in-out"
@@ -79,7 +79,6 @@ const Header = () => {
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
             onFocus={() => setShowSuggestion(true)}
-            ref={DOMNode}
           />
         </div>
 

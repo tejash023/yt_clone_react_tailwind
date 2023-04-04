@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WatchPage from "./components/WatchPage";
 import SearchByName from "./components/SearchByName";
 import VideosContainer from "./components/VideosContainer";
+import SearchedVideoList from "./components/SearchedVideoList";
 
 const appRouter = createBrowserRouter([
   {
