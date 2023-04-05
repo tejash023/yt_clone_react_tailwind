@@ -1,24 +1,7 @@
-import React from "react";
-import Button from "./Button";
 import { Link } from "react-router-dom";
 
-const buttonsList = [
-  "All",
-  "Music",
-  "News",
-  "India",
-  "IPL",
-  "React",
-  "USA",
-  "Ukraine",
-  "COD",
-  "Dhoni",
-  "G20",
-  "RCB",
-  "Punjab",
-  "Indian",
-  "Aircraft",
-];
+import { buttonsList } from "../utils/constant";
+import Button from "./Button";
 
 const ButtonsList = () => {
   return (
