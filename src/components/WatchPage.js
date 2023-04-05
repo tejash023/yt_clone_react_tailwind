@@ -10,8 +10,8 @@ const WatchPage = () => {
       <ReactPlayer
         className=" md:w-full aspect-video md:aspect-square"
         url={"https://www.youtube.com/embed/" + searchParams.get("v")}
-        controls="true"
-        playing="true"
+        controls={true}
+        playing={true}
       />
     </div>
   );

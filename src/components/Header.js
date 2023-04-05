@@ -16,6 +16,7 @@ const Header = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestion] = useState(false);
 
+  const dispatch = useDispatch();
   const searchCache = useSelector((store) => store.search);
 
   useEffect(() => {
@@ -43,9 +44,7 @@ const Header = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [searchInput]);
-
-  const dispatch = useDispatch();
+  }, [searchInput, dispatch, searchCache]);
 
   const handleNavigationMenu = () => {
     dispatch(toggleMenu());
