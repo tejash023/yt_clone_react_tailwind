@@ -28,7 +28,10 @@ const SearchByName = () => {
     <div className="flex flex-col sm:flex-wrap sm:flex-row">
       {searchVideos.map((searchVideo) =>
         searchVideo.id.kind === "youtube#channel" ? (
-          <ChannelCard key={searchVideo.id.videoId} info={searchVideo} />
+          <ChannelCard
+            key={"channel" + searchVideo.id.videoId}
+            info={searchVideo}
+          />
         ) : (
           <Link
             key={searchVideo.id.videoId}
