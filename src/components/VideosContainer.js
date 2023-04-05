@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import VideoCard from "./VideoCard";
-import { YOUTUBE_POPULAR_VIDEOS_API } from "../utils/constant";
 import { Link } from "react-router-dom";
+
+import { YOUTUBE_POPULAR_VIDEOS_API } from "../utils/constant";
+
+import VideoCard from "./VideoCard";
 import Shimmer from "./Shimmer";
 
 const VideosContainer = () => {

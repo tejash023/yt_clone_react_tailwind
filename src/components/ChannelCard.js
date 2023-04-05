@@ -1,5 +1,3 @@
-import React from "react";
-
 const ChannelCard = ({ info }) => {
   const { snippet } = info;
   const { channelTitle, title, thumbnails } = snippet;

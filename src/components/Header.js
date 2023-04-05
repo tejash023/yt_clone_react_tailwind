@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 
+import { Link } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux";
+
+import useClickOutside from "../utils/useClickOutside";
 import { toggleMenu } from "../utils/appSlice";
 import { YT_AUTOCOMPLETE } from "../utils/constant";
 import { cacheResults } from "../utils/searchSlice";
+
 import SearchBar from "./SearchBar";
-import useClickOutside from "../utils/useClickOutside";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   const [searchInput, setSearchInput] = useState("");
