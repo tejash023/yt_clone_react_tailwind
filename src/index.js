@@ -1,18 +1,13 @@
 import React from "react";
+import "./input.css";
+
 import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
-
-import Body from "./components/Body";
-import Header from "./components/Header";
-import "./input.css";
-import store from "./utils/store";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WatchPage from "./components/WatchPage";
 import SearchByName from "./components/SearchByName";
 import VideosContainer from "./components/VideosContainer";
-import SearchedVideoList from "./components/SearchedVideoList";
-import MainContainer from "./components/MainContainer";
 
 const appRouter = createBrowserRouter([
   {
@@ -31,10 +26,6 @@ const appRouter = createBrowserRouter([
         path: ":id",
         element: <WatchPage />,
       },
-      //   {
-      //     path: "results/:suggestion",
-      //     element: <SearchedVideoList />,
-      //   },
     ],
   },
 ]);
