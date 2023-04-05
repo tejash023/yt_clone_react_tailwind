@@ -1,4 +1,3 @@
-import React from "react";
 import ButtonsList from "./ButtonsList";
 import { Outlet } from "react-router";
 

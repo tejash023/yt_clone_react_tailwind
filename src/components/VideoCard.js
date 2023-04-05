@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+
 import noToString from "../utils/noToString";
 
 const VideoCard = ({ info }) => {
