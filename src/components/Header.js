@@ -6,6 +6,7 @@ import { YT_AUTOCOMPLETE } from "../utils/constant";
 import { cacheResults } from "../utils/searchSlice";
 import SearchBar from "./SearchBar";
 import useClickOutside from "../utils/useClickOutside";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -61,13 +62,13 @@ const Header = () => {
           alt="nav-icon"
         />
 
-        <a href="/">
+        <Link to="/">
           <img
             className="h-14 mx-2"
             src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png"
             alt="logo"
           />
-        </a>
+        </Link>
       </div>
 
       <div className="px-10 h-10 w-3/4 " ref={DOMNode}>
@@ -83,7 +84,15 @@ const Header = () => {
         </div>
 
         {showSuggestions && suggestions.length > 0 && (
-          <SearchBar suggestions={suggestions} />
+          <div className="sticky bg-white py-4 px-2 w-3/4 shadow-lg rounded border border-gray-100 z-10">
+            <ul>
+              {suggestions.map((suggestion) => (
+                <Link key={suggestion} to={"search/" + suggestion}>
+                  <SearchBar suggestion={suggestion} />
+                </Link>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
 

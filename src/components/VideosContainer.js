@@ -22,7 +22,7 @@ const VideosContainer = () => {
   ) : (
     <div className="flex flex-col items-center justify-center sm:flex-wrap sm:flex-row sm:items-start">
       {videos.map((video) => (
-        <Link key={video.id} to={"/watch?v=" + video.id}>
+        <Link key={video.id} to={"watch?v=" + video.id}>
           <VideoCard info={video} />
         </Link>
       ))}
