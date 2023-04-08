@@ -50,7 +50,7 @@ const VideoDetails = ({ videoDetail }) => {
             onClick={() => setSubscribed(!subscribed)}
             className="bg-slate-700 text-white rounded-full py-2 px-5 cursor-pointer"
           >
-            {subscribed ? "Subscribed" : "Subscibe"}
+            {subscribed ? "Subscribed" : "Subscribe"}
           </button>
         </div>
       </div>
