@@ -56,6 +56,7 @@ const Header = () => {
 
   return (
     <div className="fixed flex flex-row items-center justify-between p-2 top-0 w-full bg-white  px-4 shadow-sm ">
+      {/* Navigation Icon */}
       <div className="flex items-center">
         <img
           onClick={() => handleNavigationMenu()}
@@ -64,6 +65,7 @@ const Header = () => {
           alt="nav-icon"
         />
 
+        {/* YT Logo */}
         <Link to="/">
           <img
             className="h-14 mx-2"
@@ -73,6 +75,7 @@ const Header = () => {
         </Link>
       </div>
 
+      {/* Search Bar */}
       <div className="px-10 h-10 w-3/4 " ref={DOMNode}>
         <div>
           <input
@@ -85,6 +88,7 @@ const Header = () => {
           />
         </div>
 
+        {/* Showing suggestions */}
         {showSuggestions && suggestions.length > 0 && (
           <div className="sticky bg-white py-4 px-2 w-3/4 shadow-lg rounded border border-gray-100 z-10">
             <ul>
@@ -98,6 +102,7 @@ const Header = () => {
         )}
       </div>
 
+      {/* User Icon */}
       <div className="">
         <img
           className="h-8 w-8"
