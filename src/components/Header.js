@@ -19,6 +19,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const searchCache = useSelector((store) => store.search);
 
+  //API call for search input
   useEffect(() => {
     const searchInputResult = async () => {
       const response = await fetch(YT_AUTOCOMPLETE + searchInput);
@@ -46,10 +47,12 @@ const Header = () => {
     };
   }, [searchInput, dispatch, searchCache]);
 
+  //handing navigation display
   const handleNavigationMenu = () => {
     dispatch(toggleMenu());
   };
 
+  //handling outsideClick from suggestion box
   let DOMNode = useClickOutside(() => {
     setShowSuggestion(false);
   });
