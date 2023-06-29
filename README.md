@@ -20,6 +20,7 @@
 - Allows users to play videos within the app
 - Uses responsive design to fit all screen sizes
 - Built using React and Tailwind CSS for a clean and modern UI
+- Search videos
 
 ## Dependencies
 
