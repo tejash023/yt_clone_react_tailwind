@@ -58,7 +58,7 @@ const Header = () => {
   });
 
   return (
-    <div className="fixed flex flex-row items-center justify-between p-2 top-0 w-full bg-white  px-4 shadow-sm ">
+    <div className="fixed flex flex-row items-center justify-between p-2 top-0 w-full bg-white  px-4 shadow-sm z-50">
       {/* Navigation Icon */}
       <div className="flex items-center">
         <img
